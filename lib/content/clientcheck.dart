@@ -1,5 +1,6 @@
-import 'package:bank_dashboard/content/datatable.dart';
+import 'package:bank_dashboard/tables/datatable.dart';
 import 'package:bank_dashboard/ui/shared/edge_insect.dart';
+import 'package:bank_dashboard/ui/widgets/main_header.dart';
 import 'package:flutter/material.dart';
 
 import '../ui/shared/spacing.dart';
@@ -23,10 +24,10 @@ class _ClientCheckState extends State<ClientCheck> {
           Expanded(child: SingleChildScrollView(
       child: Column(
         children: [
+          const MainHeader(),
         verticalSpaceSmall,
         verticalSpaceRegular,
          Container(
-        padding: kEdgeInsetsHorizontalNormal,
         decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
     color: Colors.grey,
@@ -34,7 +35,7 @@ class _ClientCheckState extends State<ClientCheck> {
            child: SingleChildScrollView(scrollDirection: Axis.vertical,
          ),
     ),
-          datatablewidget(),
+          // datatablewidget(),
     ]
       )
     ),

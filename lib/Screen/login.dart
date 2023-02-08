@@ -1,7 +1,12 @@
 import 'package:bank_dashboard/views/main/main_view.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-class Myapp extends StatelessWidget {
+class Myapp extends StatefulWidget {
+  @override
+  State<Myapp> createState() => _MyappState();
+}
+
+class _MyappState extends State<Myapp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -18,7 +23,13 @@ class Myapp extends StatelessWidget {
   }
 }
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+bool _isobsecure = true;
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +68,13 @@ class LoginPage extends StatelessWidget {
                   width: 325,
                   decoration: BoxDecoration(
                       color:Colors.white,
-                      borderRadius: BorderRadius.circular(10)
+                      borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey,
+                        offset: Offset(4.0,4.0),
+                      )
+                    ]
                   ),
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -80,7 +97,9 @@ class LoginPage extends StatelessWidget {
                         Container(
                           width: 250,
                           child: TextField(
+                            style: TextStyle(color: Colors.black),
                             decoration: InputDecoration(
+                              labelStyle: TextStyle(color: Colors.black),
                               labelText: 'Email Address',
 
                             ),
@@ -89,19 +108,20 @@ class LoginPage extends StatelessWidget {
                         Container(
                           width: 250,
                           child: TextField(
-// obscureText: _isobsecure,
+                            obscureText: _isobsecure,
+                            style: TextStyle(color: Colors.black),
                             decoration: InputDecoration(
+                              labelStyle: TextStyle(color: Colors.black),
                               labelText: 'Password',
-
-// suffixIcon: IconButton(
-//     color: Colors.black,
-//     // icon: Icon(
-//     //     _isobsecure ? Icons.visibility : Icons.visibility_off),
-//     onPressed: () {
-//       setState(() {
-//         _isobsecure = !_isobsecure;
-//       });
-//     }),
+                              suffixIcon: IconButton(
+                                color: Colors.black,
+                                icon: Icon(
+                                    !_isobsecure ? Icons.visibility : Icons.visibility_off),
+                                onPressed: () {
+                                  setState(() {
+                                    _isobsecure = !_isobsecure;
+                                  });
+                                }),
                             ),
                           ),
                         ),

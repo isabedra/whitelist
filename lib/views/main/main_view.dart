@@ -15,15 +15,18 @@ class MainView extends StatelessWidget {
     return ViewModelBuilder<MainViewModel>.reactive(
       builder: (context, model, child) {
         return Scaffold(
+          appBar: AppBar(
+            backgroundColor: Color(0xFF1B5E20),
+          ),
           key: model.scaffoldKey,
           drawer: const SideMenu(),
           body: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               if (Responsive.isDesktop(context))
-                const Expanded(
-                  child: SideMenu(),
-                ),
+                // const Expanded(
+                //   child: SideMenu(),
+                // ),
               horizontalSpaceRegular,
               const Expanded(
                 flex: 5,

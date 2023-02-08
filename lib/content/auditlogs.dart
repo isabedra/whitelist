@@ -1,7 +1,10 @@
-import 'package:bank_dashboard/content/datatable.dart';
+import 'package:bank_dashboard/tables/datatable.dart';
 import 'package:bank_dashboard/ui/shared/edge_insect.dart';
 import 'package:bank_dashboard/ui/shared/spacing.dart';
 import 'package:flutter/material.dart';
+
+import '../tables/auditlogtable.dart';
+import '../ui/widgets/main_header.dart';
 
 class AuditLogs extends StatefulWidget {
   const AuditLogs({Key? key}) : super(key: key);
@@ -20,9 +23,9 @@ class _AuditLogsState extends State<AuditLogs> {
       child: Column(
         children: [
         verticalSpaceSmall,
+          const MainHeader(),
         verticalSpaceRegular,
         Container(
-            padding: kEdgeInsetsHorizontalNormal,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               color: Colors.grey,
@@ -30,7 +33,8 @@ class _AuditLogsState extends State<AuditLogs> {
             child: SingleChildScrollView(scrollDirection: Axis.vertical,
           ),
           ),
-        datatablewidget(),
+
+          // Auditlogswidget(),
         ],
       ),
     )
